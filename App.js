@@ -7,9 +7,10 @@ import Card from './app/component/Card';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
+import MessagesScreen from './app/screens/MessagesScreen';
 
 export default function App() {
-  return <ViewImageScreen />;
+  return <MessagesScreen />;
   return <View style={{
     backgroundColor: '#f8f4f4',
     padding: 20,
