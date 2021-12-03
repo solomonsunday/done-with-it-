@@ -8,9 +8,25 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
+import Screen from './app/component/Screen';
+import Icon from './app/component/Icon';
+import ListItem from './app/component/ListItem';
 
 export default function App() {
-  return <MessagesScreen />;
+  // return <MessagesScreen />;
+  return <Screen>
+    {/* <Icon
+      name="email"
+      size={50}
+      backgroundColor="red"
+      iconColor="white" /> */}
+
+    <ListItem title="My title"
+      subTitle="My subtitle"
+      ImageComponent={<Icon name="email" />} />
+  </Screen>
+
+
   return <View style={{
     backgroundColor: '#f8f4f4',
     padding: 20,
