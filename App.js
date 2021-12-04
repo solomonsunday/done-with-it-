@@ -1,5 +1,5 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { useState } from 'react';
+import { Text, TextInput, View } from 'react-native';
 import { useDimensions, usseDeviceOrientation } from '@react-native-community/hooks';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
@@ -11,19 +11,41 @@ import MessagesScreen from './app/screens/MessagesScreen';
 import Screen from './app/component/Screen';
 import Icon from './app/component/Icon';
 import ListItem from './app/component/ListItem';
+import AccountScreen from './app/screens/AccountScreen';
+import ListingScreen from './app/screens/ListingScreen';
 
 export default function App() {
-  // return <MessagesScreen />;
-  return <Screen>
-    {/* <Icon
-      name="email"
-      size={50}
-      backgroundColor="red"
-      iconColor="white" /> */}
+  const [firstName, setFirstName] = useState();
 
+  // return <MessagesScreen />;
+  // return <ListingScreen />
+
+  return (
+    <Screen>
+      <Text> {firstName}</Text>
+      <TextInput
+        keyboardType=""
+        clearButtonMode="always"
+        secureTextEntry
+        onChangeText={text => setFirstName(text)}
+        placeholder="Firt Name"
+        style={{
+          borderBottomColor: "#ccc",
+          borderBottomWidth: 1
+        }}
+      />
+
+    </Screen>
+  )
+
+
+
+
+
+  return <Screen>
     <ListItem title="My title"
       subTitle="My subtitle"
-      ImageComponent={<Icon name="email" />} />
+      IconComponent={<Icon name="email" />} />
   </Screen>
 
 
