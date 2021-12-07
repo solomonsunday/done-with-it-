@@ -15,28 +15,31 @@ import AccountScreen from './app/screens/AccountScreen';
 import ListingScreen from './app/screens/ListingScreen';
 import AppTextInput from './app/component/AppTextInput';
 import AppPicker from './app/component/AppPicker';
+import LoginScreen from './app/screens/LoginScreen';
 
-const categories = [
-  { label: items = "Furnitures", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Cameras", value: 3 }
-]
+// const categories = [
+//   { label: items = "Furnitures", value: 1 },
+//   { label: "Clothing", value: 2 },
+//   { label: "Cameras", value: 3 }
+// ]
 
 export default function App() {
-  const [firstName, setFirstName] = useState();
-  const [isNew, setIsNew] = useState(false);
-  const [category, setCategory] = useState(categories[0]);
+  // const [firstName, setFirstName] = useState();
+  // const [isNew, setIsNew] = useState(false);
+  // const [category, setCategory] = useState(categories[0]);
 
   // return <MessagesScreen />;
   // return <ListingScreen />
 
-  return <Screen>
-    <AppPicker
-      selectedItem={category}
-      onSelectItem={item => setCategory(item)}
-      items={categories} icon="apps" placeholder="Category" />
-    <AppTextInput icon="email" placeholder="Email" />
-  </Screen>
+  return <LoginScreen />
+
+  // return <Screen>
+  //   <AppPicker
+  //     selectedItem={category}
+  //     onSelectItem={item => setCategory(item)}
+  //     items={categories} icon="apps" placeholder="Category" />
+  //   <AppTextInput icon="email" placeholder="Email" />
+  // </Screen>
 
   // return (<Screen>
   //   <Switch value={isNew}
