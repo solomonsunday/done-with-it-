@@ -7,10 +7,10 @@ import Screen from '../component/Screen';
 import { Formik } from "formik";
 import * as Yup from "yup";
 import AppText from '../component/AppText.android';
-import ErrorMessage from '../component/ErrorMessage';
+import ErrorMessage from '../component/forms/ErrorMessage';
 import { ForceTouchGestureHandler } from 'react-native-gesture-handler';
-import AppFormField from '../component/AppFormField';
-import SubmitButton from '../component/SubmitButton';
+import AppFormField from '../component/forms/AppFormField';
+import SubmitButton from '../component/forms/SubmitButton';
 import AppForm from '../component/AppForm';
 
 const validationSchema = Yup.object().shape({

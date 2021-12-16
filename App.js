@@ -35,6 +35,8 @@ export default function App() {
 
   // For selecting image from your phone.
 
+  return <ListEditScreen />
+
   const [imageUris, setImageUris] = useState([]);
 
   const handleAdd = (uri) => {
