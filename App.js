@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Switch, Text, TextInput, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Switch, Text, TextInput, View, Button, Image } from 'react-native';
 import { useDimensions, usseDeviceOrientation } from '@react-native-community/hooks';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
@@ -17,6 +17,10 @@ import AppTextInput from './app/component/AppTextInput';
 import AppPicker from './app/component/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import ListEditScreen from './app/component/ListEditScreen';
+import * as ImagePicker from 'expo-image-picker';
+import { Permissions } from "expo-permissions";
+import ImageInput from './app/component/ImageInput';
+import ImageInputList from './app/component/ImageInputList';
 
 // const categories = [
 //   { label: items = "Furnitures", value: 1 },
@@ -29,11 +33,34 @@ export default function App() {
   // const [isNew, setIsNew] = useState(false);
   // const [category, setCategory] = useState(categories[0]);
 
+  // For selecting image from your phone.
+
+  const [imageUris, setImageUris] = useState([]);
+
+  const handleAdd = (uri) => {
+    return setImageUris([...imageUris, uri]);
+
+  }
+
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter(imageUri => imageUri !== uri));
+  }
+
+
+  return <Screen>
+    <ImageInputList
+      imageUris={imageUris}
+      onAddImage={handleAdd}
+      onRemoveImage={handleRemove} />
+  </Screen>
+
+
   // return <MessagesScreen />;
+
   // return <ListingScreen />
 
   // return <LoginScreen />
-  return <ListEditScreen />
+  // return <ListEditScreen />
 
   // return <Screen>
   //   <AppPicker
