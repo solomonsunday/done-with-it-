@@ -4,6 +4,7 @@ import Card from '../component/Card';
 
 import Screen from '../component/Screen';
 import colors from '../config/colors';
+import route from '../navigation/route';
 
 
 const listings = [
@@ -15,19 +16,19 @@ const listings = [
     },
     {
         id: 2,
-        title: 'Couch in great condition',
+        title: 'Tray pan for sale',
         price: 4000,
         image: require('../assets/traypan.png')
     },
     {
         id: 3,
-        title: 'Tray pan for sale',
+        title: 'Couch in great condition',
         price: 10000,
         image: require('../assets/couch.jpg')
     }
 ]
 
-const ListingScreen = (props) => {
+const ListingScreen = ({ navigation }) => {
     return (
         <Screen style={styles.screen}>
             <FlatList
@@ -37,7 +38,9 @@ const ListingScreen = (props) => {
                     <Card
                         title={item.title}
                         subTitle={"N" + item.price}
-                        image={item.image} />
+                        image={item.image}
+                        onPress={() => navigation.navigate(route.LISTING_DETAIILS, item)}
+                    />
                 }
 
             />

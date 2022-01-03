@@ -16,26 +16,27 @@ import ListingScreen from './app/screens/ListingScreen';
 import AppTextInput from './app/component/AppTextInput';
 import AppPicker from './app/component/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
-import ListEditScreen from './app/component/ListEditScreen';
+import ListEditScreen from './app/screens/ListEditScreen';
 import * as ImagePicker from 'expo-image-picker';
 import { Permissions } from "expo-permissions";
 import ImageInput from './app/component/ImageInput';
 import ImageInputList from './app/component/ImageInputList';
 
-// const categories = [
-//   { label: items = "Furnitures", value: 1 },
-//   { label: "Clothing", value: 2 },
-//   { label: "Cameras", value: 3 }
-// ]
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, useNavigation } from "@react-navigation/native"
+import AuthNavigation from './app/navigation/AuthNavigation';
+import NavigationTheme from './app/navigation/navigationTheme';
+import AppNavigator from './app/navigation/AppNavigator';
+
+
 
 export default function App() {
-  // const [firstName, setFirstName] = useState();
-  // const [isNew, setIsNew] = useState(false);
-  // const [category, setCategory] = useState(categories[0]);
 
-  // For selecting image from your phone.
+  return <NavigationContainer theme={NavigationTheme}>
+    {/* <AuthNavigation /> */}
+    <AppNavigator />
+  </NavigationContainer>
 
-  return <ListEditScreen />
 
   const [imageUris, setImageUris] = useState([]);
 

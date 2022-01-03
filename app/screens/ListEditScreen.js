@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import * as Yup from "yup";
-import AppForm from './AppForm';
-import AppFormField from './forms/AppFormField';
-import SubmitButton from './forms/SubmitButton';
-import AppFormPicker from './forms/AppFormPicker';
-import Screen from './Screen';
-import FormImagepicker from './forms/FormImagepicker';
+import AppForm from '../component/AppForm';
+import AppFormField from '../component/forms/AppFormField';
+import SubmitButton from '../component/forms/SubmitButton';
+import AppFormPicker from '../component/forms/AppFormPicker';
+import Screen from '../component/Screen';
+import FormImagepicker from '../component/forms/FormImagepicker';
 import useLocation from '../hooks/useLocation';
 
 const ValidationSchema = Yup.object().shape({
